@@ -1,13 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.proyecto.taller21260326;
+class ListaEnlazada {
+    private Nodo cabeza; 
 
-/**
- *
- * @author Admin
- */
-public class listaenlazada {
-    
-}
+    public ListaEnlazada() {
+        cabeza = null;
+    }
+
+
+    public void agregar(int valor) {
+        Nodo nuevo = new Nodo(valor);
+
+        if (cabeza == null) {
+            cabeza = nuevo; 
+        } else {
+            Nodo actual = cabeza;
+            while (actual.siguiente != null) { 
+                actual = actual.siguiente;
+            }
+            actual.siguiente = nuevo; 
+        }
